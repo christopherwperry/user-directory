@@ -8,16 +8,32 @@
     <div class="user-profile">
       <img src="{{avatar}}" alt="">
       <h1>{{name}}</h1>
-      <p>{{address.city}}, {{address.country}} |
-        {{#job}}
-        <p class="job">{{job}}, {{company}}</p>
-        {{/job}}
-        {{^job}}
-        <p class="no-job">Available for hire</p>
-        {{/job}}</p>
-      <p>{{email}} | {{phone}}</p>
-      
+      {{#address}}
+      <div class="address">{{address.city}}, {{address.country}} | </div>
+      {{/address}}
+      {{#job}}
+      <div class="job"> {{job}}, {{company}}</div>
+      {{/job}}
+      {{^job}}
+      <div class="no-job">Available for hire</div>
+      {{/job}}
+      <div class="email">{{email}} | {{phone}}</div>
+      <table>
+        {{#university}}
+        <tr>
+          <td><strong>Education</strong></td>
+          <td>{{university}}</td>
+        </tr>
+        {{/university}}
+        <tr>
+          <td><strong>Skills</strong></td>
+          <td>
+          {{#skills}}
+          {{.}}<br>
+          {{/skills}}
+          </td>
+        </tr>
+      </table>
     </div>
-
   </body>
 </html>
