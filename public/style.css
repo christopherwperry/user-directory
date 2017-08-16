@@ -1,0 +1,23 @@
+body {
+  text-align: center;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.user-profiles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  justify-content: space-between;
+}
+
+.user {
+  width: 20vw;
+}
+
+a {
+  font-size: 16px;
+  color: #2660C3;
+}

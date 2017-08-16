@@ -6,10 +6,11 @@ const mustache = require('mustache-express');
 const data = require('./data.js');
 let position;
 
+app.use(express.static(__dirname + '/public'));
 app.engine('mustache', mustache());
 app.set('views', './views');
 app.set('view engine', 'mustache');
-app.use('/user-directory', express.static('user-directory'));
+
 
 app.get('/', function(req, res){
   res.send('Hello World!');
@@ -17,7 +18,6 @@ app.get('/', function(req, res){
 
 app.get('/users/:id', function(req, res){
   position = req.params.id - 1;
-  console.log(position);
   res.render('id', data.users[position]);});
 
 app.get('/users', function(req, res){
