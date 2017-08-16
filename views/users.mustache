@@ -9,9 +9,14 @@
     <div class="user-profiles">
       {{#users}}
       <div class="user">
-        <img src="{{avatar}}" alt="">
+        <img src="{{avatar}}" alt="No Image Available">
         <a class="name" href="http://localhost:3000/users/{{id}}">{{name}}</a>
+        {{#job}}
         <p class="job">{{job}}, {{company}}</p>
+        {{/job}}
+        {{^job}}
+        <p class="no-job">Available for hire</p>
+        {{/job}}
       </div>
       {{/users}}
     </div>

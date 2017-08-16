@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>User Profile</title>
+  </head>
+  <body>
+    <div class="user-profile">
+      <img src="{{avatar}}" alt="">
+      <h1>{{name}}</h1>
+      <p>{{address.city}}, {{address.country}} |
+        {{#job}}
+        <p class="job">{{job}}, {{company}}</p>
+        {{/job}}
+        {{^job}}
+        <p class="no-job">Available for hire</p>
+        {{/job}}</p>
+      <p>{{email}} | {{phone}}</p>
+      
+    </div>
+
+  </body>
+</html>
