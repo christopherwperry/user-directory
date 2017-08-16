@@ -10,10 +10,15 @@
   <body>
     <div class="user-profile">
       <img src="{{avatar}}" alt="">
-      <h1>{{name}}</h1>
-      {{#address}}
-      <div class="address">{{address.city}}, {{address.country}} | </div>
-      {{/address}}
+      <h1 class="user-name">{{name}}</h1>
+      <div class="city">
+      {{#address.city}}
+      {{address.city}},
+      {{/address.city}}
+      {{#address.country}}
+      {{address.country}}
+      {{/address.country}}
+      </div>
       {{#job}}
       <div class="job"> {{job}}, {{company}}</div>
       {{/job}}
@@ -24,12 +29,12 @@
       <table>
         {{#university}}
         <tr>
-          <td><strong>Education</strong></td>
+          <td><strong>Education:</strong></td>
           <td>{{university}}</td>
         </tr>
         {{/university}}
         <tr>
-          <td><strong>Skills</strong></td>
+          <td><strong>Skills:</strong></td>
           <td>
           {{#skills}}
           {{.}}<br>
